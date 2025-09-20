@@ -6,7 +6,7 @@ from flask import Flask,render_template,request
 scaler=StandardScaler()
 app=Flask(__name__)
 
-model=joblib.load('model.pkl')
+model=joblib.load('crypto.pkl')
 scaler=joblib.load('scaler.pkl')
 
 @app.route('/')
