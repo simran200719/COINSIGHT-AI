@@ -1,0 +1,26 @@
+<html>
+  <head>
+    <title>COINSIGHT AI</title>
+  </head>
+  <body>
+    <h1 style="font-size: 26px; color:grey; font-weight: bold;text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5)">Forecast Your Crypto Future</h1>
+     <div>
+       <form action='/predict' method='post'>
+         <label style='color:aliceblue'>Opening Price:</label>
+         <input type='text' name='open' placeholder='Enter opening price'>
+         <label style='color:aliceblue'>Highest Price:</label>
+         <input type='text' name='high' placeholder='Enter highest price'>
+         <label style='color:aliceblue'>Lowest Price:</label>
+         <input type='text' name='low' placeholder='Enter lowest price'>
+         <label style='color:aliceblue'>Closing Price:</label>
+         <input type='text' name='close' placeholder='Enter closing price'>
+         <label style='color:aliceblue'>Volume:</label>
+         <input type='text' name='colume' placeholder='Enter volume'>
+         <input type='submit' value='predict' >
+         <input type='button' value='refresh'>
+         
+       </form>
+     </div>
+    <h2> {{result}} </h2>
+  </body>
+</html>
