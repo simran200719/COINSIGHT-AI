@@ -1,6 +1,7 @@
 import joblib
 from sklearn.preprocessor import StandardScaler
 from flask import Flask,render_template,request
+import statsmodel.api as sm
 app=Flask(__name__)
 
 model=joblib.load('model.pkl')
@@ -18,8 +19,8 @@ def pred():
     Close=float(sclaer.fit_transform(request.form.get('close')))	
     Volume=float(scaler.fit_transform(request.form.get('volume')))
 
-    prediction=model.predict('open,'high','low','close','volume')
-
+    prediction=model.predict('open','high','low','close','volume')
     return render_template('index.html',result=prediction)
     
-
+if __name__=='__main__':
+    app.run(debug=True)
