@@ -1,33 +1,29 @@
 html, body {
   height: 100%;
   margin: 0;
+  font-family: Arial, sans-serif;
 }
 
 body {
-  display: flex;
-  justify-content: center;  /* horizontal center */
-  align-items: center;      /* vertical center */
-  height: 100vh;            /* full viewport height */
-  width:400px;
-  margin:50px auto;
-  padding:20px;
   background-image:url('https://cdn-uploads.huggingface.co/production/uploads/68c9040752743c0e389c6079/3Bwo1Og_FLJVaDbXqihW8.gif');
-  background-size:cover;background-position:center;color:white ; border-radius:10px;
+  background-size:cover;background-position:center;color:white ;  background-repeat: no-repeat; border-radius:10px;
 }
     
 .form-group input, .form-group label {
   background: transparent;
   color: white;
   border: 1px solid white;
+  display:block;
+  width:100%;
+  
 }
 .page-container {
   width: 450px;             /* Fixed width */
-  margin: 50px auto;        /* Center horizontally with margin top/bottom */
-  padding: 30px 40px;       /* Padding inside the box */
   background: white;        /* Background color (or use an image) */
   border-radius: 15px;      /* Rounded corners */
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Soft shadow */
   color: #333;              /* Text color */
   font-family: Arial, sans-serif;
+  text-align: center;
 }
 
