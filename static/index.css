@@ -39,6 +39,10 @@ body {
   background: #fff;; /* Soft shadow */
   color: #333;              /* Text color */
   font-family: Arial, sans-serif;
-  text-align: left;
+  padding: 30px 40px;     /* this adds spacing inside the container */
+  display: flex;
+  flex-direction: column; /* stack children vertically */
+  align-items: flex-start; /* align text/inputs to left with padding */
+  box-sizing: border-box;
 }
 
