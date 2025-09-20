@@ -8,15 +8,13 @@ body {
   justify-content: center;  /* horizontal center */
   align-items: center;      /* vertical center */
   height: 100vh;            /* full viewport height */
-}
-
-.form-group{
-    width:400px;
+  width:400px;
   margin:50px auto;
   padding:20px;
   background-image:url('https://cdn-uploads.huggingface.co/production/uploads/68c9040752743c0e389c6079/3Bwo1Og_FLJVaDbXqihW8.gif');
   background-size:cover;background-position:center;color:white ; border-radius:10px;
 }
+    
 .form-group input, .form-group label {
   background: transparent;
   color: white;
