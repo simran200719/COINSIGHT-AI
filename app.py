@@ -1,9 +1,9 @@
 import joblib
-from sklearn.preprocessing import StandardScaler
+
 from flask import Flask,render_template,request
 
 
-scaler=StandardScaler()
+
 app=Flask(__name__)
 
 model=joblib.load('crypto.pkl')
@@ -21,8 +21,7 @@ def pred():
     Close=float(request.form.get('close'))
     Volume=float(request.form.get('volume'))
 
-    input=scaler.transform([[Open,High,Low,Close,Volume]])
-    prediction=model.predict(input)
+    prediction=model.predict([[Open,High,Low,Close,Volume]])
     return render_template('index.html',result=prediction[0])
     
 if __name__=='__main__':
