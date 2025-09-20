@@ -4,6 +4,7 @@
   </head>
   <body>
     <h1 style="color:grey; font-weight: bold;text-shadow: 2px 2px 0 #000, 2px 2px 0 #555;">Forecast Your Crypto Future</h1>
+    <div class='page-container'>
      <div class='form-group'>
        <form action='/predict' method='post'>
          <label style='font-size:26px;color:navy;text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);'>Opening Price:</label>
@@ -20,6 +21,7 @@
          <input type='reset' value='refresh' style='color:black;background-color:green;padding:10px 20px;border:1px darkgreen;border-radius:3px;cursor:wait;'><br>
          
        </form>
+       </div>
      </div>
     <h2 style="color:grey; font-weight: bold;text-shadow: 1px 1px 0 #000, 2px 2px 0 #555;">Predicted closing price for tomorrow : {{result}} </h2>
   </body>
