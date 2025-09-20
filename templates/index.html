@@ -5,9 +5,9 @@
     <link rel='stylesheet' href="{{ url_for('static', filename='index.css') }}">
   </head>
   <body>
-  
+   <div class='page-container'>
     <h1 style="color:grey; font-weight: bold;text-shadow: 2px 2px 0 #000, 2px 2px 0 #555;">Forecast Your Crypto Future</h1>
-      <div class='page-container'>
+     
         <div class='form-group'>
        <form action='/predict' method='post'>
          
@@ -32,11 +32,11 @@
          
        </form>
        </div>
-     </div>
+  
     {% if result%}
      <h2 style="color:rebeccapurple; font-weight: bold;text-shadow: 1px 1px 0 #000, 2px 2px 0 #555;">Predicted closing price for tomorrow : {{result}} </h2>
     {% endif%}
     
-    
+       </div
   </body>
 </html>
