@@ -1,7 +1,9 @@
 import joblib
 from sklearn.preprocessor import StandardScaler
 from flask import Flask,render_template,request
-import statsmodel.api as sm
+
+
+scaler=StandardScaler()
 app=Flask(__name__)
 
 model=joblib.load('model.pkl')
