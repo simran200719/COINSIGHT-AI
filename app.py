@@ -1,5 +1,5 @@
 import joblib
-from sklearn.preprocessor import StandardScaler
+from sklearn.preprocessing import StandardScaler
 from flask import Flask,render_template,request
 
 
