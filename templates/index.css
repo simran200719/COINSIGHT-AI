@@ -1,3 +1,15 @@
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;  /* horizontal center */
+  align-items: center;      /* vertical center */
+  height: 100vh;            /* full viewport height */
+}
+
 .form-group{
     width:400px;
   margin:50px auto;
@@ -10,3 +22,14 @@
   color: white;
   border: 1px solid white;
 }
+.page-container {
+  width: 450px;             /* Fixed width */
+  margin: 50px auto;        /* Center horizontally with margin top/bottom */
+  padding: 30px 40px;       /* Padding inside the box */
+  background: white;        /* Background color (or use an image) */
+  border-radius: 15px;      /* Rounded corners */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Soft shadow */
+  color: #333;              /* Text color */
+  font-family: Arial, sans-serif;
+}
+
