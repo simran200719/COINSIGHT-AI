@@ -5,7 +5,7 @@ import numpy as np
 
 
 app=Flask(__name__)
-scaler=joblib.load('scaler.pkl')
+scaler_x=joblib.load('scaler_x.pkl')
 model=joblib.load('crypto.pkl')
 scaler_y=joblib.load('scaler_y.pkl')
 
@@ -22,7 +22,7 @@ def pred():
     Volume=float(request.form.get('volume'))
 
     user_input=[[Open,High,Low,Close,Volume]]
-    scaled_input=scaler.transform(user_input)
+    scaled_input=scaler_x.transform(user_input)
     prediction=model.predict(scaled_input)
     predict=scaler_y.inverse_transform(prediction.reshape(-1,1))
     return render_template('index.html',result=predict[0][0])
