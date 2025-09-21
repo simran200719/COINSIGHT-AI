@@ -21,7 +21,7 @@ def pred():
     Close=float(request.form.get('close'))
     Volume=float(request.form.get('volume'))
 
-    user_input=np.array([[Open,High,Low,Close,Volume]])
+    user_input=[[Open,High,Low,Close,Volume]]
     scaled_input=scaler.transform(user_input)
     prediction=model.predict(scaled_input)
     predict=scaler_y.inverse_transform(prediction.reshape(-1,1))
