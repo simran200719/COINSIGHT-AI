@@ -25,7 +25,7 @@ def pred():
     scaled_input=scaler_x_full.fit_transform(user_input)
     prediction=model.predict(scaled_input)
     
-    return render_template('index.html',result=prediction[0][0])
+    return render_template('index.html',result=prediction[0])
     
 if __name__=='__main__':
     app.run(debug=True)
