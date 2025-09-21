@@ -5,7 +5,7 @@ from flask import Flask,render_template,request
 
 
 app=Flask(__name__)
-scaler.joblib.load('scaler.pkl')
+scaler=joblib.load('scaler.pkl')
 model=joblib.load('crypto.pkl')
 
 
