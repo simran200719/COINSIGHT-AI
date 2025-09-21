@@ -11,6 +11,8 @@ body {
   align-items: center;
   min-height: 100vh;
   padding: 20px;
+  background-image: url('https://cdn-uploads.huggingface.co/production/uploads/68c9040752743c0e389c6079/hPJPItlS7eMfZfQFEo8XX.gif');
+  background-size: cover;
 }
 
 /* Video background with fallback image */
@@ -22,8 +24,7 @@ body {
   height: 100%;
   z-index: -2;
   overflow: hidden;
-  background-image: url('https://cdn-uploads.huggingface.co/production/uploads/68c9040752743c0e389c6079/hPJPItlS7eMfZfQFEo8XX.gif');
-  background-size: cover;
+  
   background-position: center;
 }
 
@@ -110,6 +111,7 @@ body {
 /* Buttons container */
 .btn {
       flex: 1;
+      flex-direction:column;
       padding: 14px 20px;
       border: none;
       border-radius: 8px;
