@@ -7,7 +7,7 @@ import numpy as np
 app=Flask(__name__)
 scaler_x=joblib.load('scaler_x.pkl')
 model=joblib.load('crypto.pkl')
-scaler_y=joblib.load('scaler_y.pkl')
+scaler_x_full=joblib.load('scaler_x_full.pkl')
 
 @app.route('/')
 def home():
@@ -22,10 +22,10 @@ def pred():
     Volume=float(request.form.get('volume'))
 
     user_input=[[Open,High,Low,Close,Volume]]
-    scaled_input=scaler_x.transform(user_input)
+    scaled_input=scaler_x_full.transform(user_input)
     prediction=model.predict(scaled_input)
     
-    return render_template('index.html',result=prediction)
+    return render_template('index.html',result=prediction[0][0])
     
 if __name__=='__main__':
     app.run(debug=True)
