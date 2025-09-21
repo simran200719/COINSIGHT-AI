@@ -24,8 +24,8 @@ def pred():
     user_input=[[Open,High,Low,Close,Volume]]
     scaled_input=scaler_x.transform(user_input)
     prediction=model.predict(scaled_input)
-    predict=scaler_y.inverse_transform(prediction.reshape(-1,1))
-    return render_template('index.html',result=predict[0][0])
+    
+    return render_template('index.html',result=prediction)
     
 if __name__=='__main__':
     app.run(debug=True)
