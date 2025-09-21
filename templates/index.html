@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>COINSIGHT AI</title>
+  <title>COINSIGHT AI</title>
+  <link rel="icon" href="{{ url_for('static', filename='cryp.ico') }}" type="image/x-icon">
     <link rel='stylesheet' href="{{ url_for('static', filename='index.css') }}">
-  </head>
+      
+</head>
+
   <body>
     <!-- Background Video -->
   <div class="video-container">
@@ -17,7 +20,6 @@
       aria-label="Background animation"
       
     >
-      
     </video>
   </div>
   
@@ -58,7 +60,7 @@
       
   
     {% if result%}
-     <h2 style="color:rebeccapurple; font-weight: bold;text-shadow: 1px 1px 0 #000, 2px 2px 0 #555;">Predicted closing price for tomorrow : {{result}} </h2>
+     <h2 style="color:rebeccapurple; font-weight: bold;text-shadow: 1px 1px 0 #000, 2px 2px 0 #555;">Nearest Predicted closing price for tomorrow : {{result}} </h2>
     {% endif%}
     
    </div>
