@@ -7,7 +7,7 @@ import numpy as np
 app=Flask(__name__)
 
 model=joblib.load('crypto.pkl')
-scaler_x_full=joblib.load('scaler_x.pkl')
+scaler_x=joblib.load('scaler_x.pkl')
 
 @app.route('/')
 def home():
