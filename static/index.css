@@ -14,7 +14,48 @@ body {
   background-image:url('https://cdn-uploads.huggingface.co/production/uploads/68c9040752743c0e389c6079/3Bwo1Og_FLJVaDbXqihW8.gif');
   background-size:cover;background-position:center;color:white ;  background-repeat: no-repeat; border-radius:10px;
 }
-    
+button-group {
+      display: flex;
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+.btn {
+      flex: 1;
+      padding: 14px 20px;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+.btn-primary {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+    }
+.btn-primary:hover:not(:disabled) {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+    }
+.btn-secondary {
+      background: white;
+      color: #333;
+      border: 2px solid #e1e5e9;
+    }
+.btn-secondary:hover {
+      background: #f8f9fa;
+      border-color: #333;
+    }
+.btn:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
 .form-group input {
   background: transparent;
   color: black;
@@ -23,7 +64,7 @@ body {
   width:80%;
 }
 
-  .form-group label {
+.form-group label {
   background: transparent;
   color: black;
   
