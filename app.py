@@ -13,7 +13,7 @@ scaler_x=joblib.load('scaler_x.pkl')
 def home():
     return render_template('home.html')
     
-@app.roue('/start')
+@app.route('/start')
 def startt():
     return render_template('index.html')
     
