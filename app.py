@@ -22,7 +22,7 @@ def pred():
     Volume=float(request.form.get('volume'))
 
     user_input=[[Open,High,Low,Close,Volume]]
-    scaled_input=scaler_x_full.transform(user_input)
+    scaled_input=scaler_x_full.fit_transform(user_input)
     prediction=model.predict(scaled_input)
     
     return render_template('index.html',result=prediction[0][0])
