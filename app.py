@@ -7,7 +7,7 @@ from flask import Flask,render_template,request
 app=Flask(__name__)
 scaler=joblib.load('scaler.pkl')
 model=joblib.load('crypto.pkl')
-
+scaler_y=joblib.load('scaler_y.pkl')
 
 @app.route('/')
 def home():
@@ -23,8 +23,8 @@ def pred():
 
     user_input=scaler.transform([[Open,High,Low,Close,Volume]])
     prediction=model.predict(user_input)
-    prediction=scaler.inverse_transform(prediction)
-    return render_template('index.html',result=prediction[0][0])
+    predict=scaler_y.inverse_transform(prediction)
+    return render_template('index.html',result=predict[0][0])
     
 if __name__=='__main__':
     app.run(debug=True)
