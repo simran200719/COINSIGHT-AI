@@ -8,7 +8,7 @@ body {
   display: flex;
   justify-content: center;   /* center horizontally */
   align-items: center;       /* center vertically */
-  min-height: 80vh;      /* at least 80% viewport height */
+  min-height: 100vh;      /* at least 80% viewport height */
   padding: 40px 0;  
    border-radius: 10px;
   background-image:url('https://cdn-uploads.huggingface.co/production/uploads/68c9040752743c0e389c6079/3Bwo1Og_FLJVaDbXqihW8.gif');
@@ -29,7 +29,7 @@ body {
   
 }
 .page-container {
-  width: 450px;             /* Fixed width */
+  width: 400px;             /* Fixed width */
   background: transparent;        /* Background color (or use an image) */
   border-radius: 20px;      /* Rounded corners */
   box-shadow:
