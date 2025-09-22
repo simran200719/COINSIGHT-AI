@@ -13,7 +13,7 @@ scaler_x=joblib.load('scaler_x.pkl')
 @app.route('/')
 def home():
     try:
-        response = requests.get('https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd', timeout=5)
+        response = requests.get('https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd', timeout=5) #fetched using  API
         response.raise_for_status()  # This will raise an HTTPError if status != 200
         data = response.json()
         btc_price = data['bitcoin']['usd']
