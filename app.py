@@ -29,7 +29,7 @@ def home():
 
 
 @app.route('/home')
-def startt():
+def start():
     return redirect(url_for('home'))  # Redirect to the 'home' function
     
 @app.route('/start')
