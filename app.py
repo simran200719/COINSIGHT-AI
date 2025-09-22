@@ -2,6 +2,7 @@ import joblib
 from sklearn.preprocessing import StandardScaler
 from flask import Flask,render_template,request
 import numpy as np
+import requests
 
 
 app=Flask(__name__)
@@ -11,7 +12,15 @@ scaler_x=joblib.load('scaler_x.pkl')
 
 @app.route('/')
 def home():
-    return render_template('home.html')
+    try:
+        response = requests.get('https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd')
+        data = response.json()
+        btc_price = data['bitcoin']['usd']
+    except Exception as e:
+        btc_price = "Error fetching price"
+    
+    return render_template('home.html', btc_price=btc_price)
+
     
 @app.route('/start')
 def startt():
