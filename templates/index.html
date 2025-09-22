@@ -105,6 +105,7 @@
     type="button" 
     value="Go to Home" 
     onclick="window.location.href='/'" />
+  
 
   <!-- Background Video -->
   <div class="video-container">
@@ -132,19 +133,19 @@
     <form action="/predict" method="post" id="predictionForm">
       <div class="form-group">
         <label style="font-size:26px;color:navy;text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);">Opening Price:</label><br>
-        <input type="text" name="open" placeholder="Enter opening price"><br>
+        <input type="number" name="open" placeholder="Enter opening price" required><br>
 
         <label style="font-size:26px;color:navy;">Highest Price:</label><br>
-        <input type="text" name="high" placeholder="Enter highest price"><br>
+        <input type="number" name="high" placeholder="Enter highest price" required><br>
 
         <label style="font-size:26px;color:navy;">Lowest Price:</label><br>
-        <input type="text" name="low" placeholder="Enter lowest price"><br>
+        <input type="number" name="low" placeholder="Enter lowest price" required><br>
 
         <label style="font-size:26px;color:navy;">Closing Price:</label><br>
-        <input type="text" name="close" placeholder="Enter closing price"><br>
+        <input type="number" name="close" placeholder="Enter closing price" required><br>
 
         <label style="font-size:26px;color:navy;">Volume:</label><br>
-        <input type="text" name="volume" placeholder="Enter volume"><br>
+        <input type="number" name="volume" placeholder="Enter volume" required><br>
       </div>
 
       <div class="button-group">
