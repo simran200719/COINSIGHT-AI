@@ -11,20 +11,20 @@ model=joblib.load('crypto.pkl')
 scaler_x=joblib.load('scaler_x.pkl')
 
 @app.route('/')
-   def home():
-       print("HOME ROUTE ACCESSED!")  # Debug print
-       try:
+def home():
+    print("HOME ROUTE ACCESSED!")  # Debug print
+    try:
            response = requests.get('https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd', timeout=5)
            response.raise_for_status()
            data = response.json()
            btc_price = data['bitcoin']['usd']
            print(f"BTC Price: {btc_price}")  # Debug print
-       except Exception as e:
+    except Exception as e:
            print("Error fetching price:", e)
            btc_price = "Error fetching price"
        
-       print("Rendering home.html")  # Debug print
-       return render_template('home.html', btc_price=btc_price)
+    print("Rendering home.html")  # Debug print
+    return render_template('home.html', btc_price=btc_price)
 
 
 
