@@ -1,34 +1,77 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Home - COINSIGHT AI</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f4f8;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+    video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      min-width: 100%;
+      min-height: 100%;
+      object-fit: cover;
+      z-index: -1;
+      filter: brightness(0.6);
+    }
+    .container {
+      background: white;
+      padding: 40px 60px;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      text-align: center;
+      max-width: 400px;
+    }
+    .btn-primary {
+      text-decoration: none;
+      background-color: #1a73e8;
+      color: white;
+      padding: 12px 25px;
+      border-radius: 5px;
+      font-weight: bold;
+      font-size: 16px;
+      display: inline-block;
+      margin-top: 20px;
+    }
+    .footer {
+      margin-top: 30px;
+      font-size: 14px;
+      color: #888;
+    }
+  </style>
 </head>
-<body style="font-family: Arial, sans-serif; background-color: #f0f4f8; margin: 0; padding: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh;">
+<body>
+  <video autoplay muted loop playsinline>
+    <source src="https://dl.statusvideoz.com/uploads/file_id627072_2025.mp4" type="video/mp4" />
+    <!-- Fallback text for unsupported browsers -->
+    Your browser does not support the video tag.
+  </video>
 
-  <!-- Background Video -->
-  <video autoplay muted loop playsinline style="position: fixed; top: 0; left: 0; min-width: 100%; min-height: 100%; object-fit: cover; z-index: -1; filter: brightness(0.6);">
-      <source src="https://dl.statusvideoz.com/uploads/file_id627072_2025.mp4 " type="video/mp4">
-</video>
-  <div style="background: white; padding: 40px 60px; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); text-align: center; max-width: 400px;">
-    <h1 style="color: #1a73e8; margin-bottom: 20px;">Welcome to COINSIGHT AI</h1>
-    <p style="color: #555; font-size: 18px; margin-bottom: 30px;">
+  <div class="container">
+    <h1 style="color: #1a73e8;">Welcome to COINSIGHT AI</h1>
+    <p style="color: #555; font-size: 18px;">
       Your trusted crypto price predictor.
     </p>
     <p>Latest Bitcoin Price (USD): <strong>{{ btc_price }}</strong></p>
-    <p>Fectched using coingenko API</p>
-    
-    <a href="/start" 
-       style="text-decoration: none; background-color: #1a73e8; color: white; padding: 12px 25px; border-radius: 5px; font-weight: bold; font-size: 16px; display: inline-block;">
-       Start Prediction
-    </a>
-       <div class="footer">
+    <p>Fetched using CoinGecko API</p>
 
+    <a href="/start" class="btn-primary">Start Prediction</a>
+
+    <div class="footer">
       <p>&copy; Made By Gursimranjot Kaur</p>
-   </div>
+    </div>
   </div>
-        <hr>
-  
-
-      
 </body>
 </html>
