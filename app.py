@@ -26,6 +26,10 @@ def home():
     print("Rendering home.html")  # Debug print
     return render_template('home.html', btc_price=btc_price)
 
+    @app.route('/about')
+    def about():
+        return render_template('about.html')
+
 
 @app.route('/start')
 def startt():
