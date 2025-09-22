@@ -1,73 +1,177 @@
 <!DOCTYPE html>
-<html>
-  <head>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
   <title>COINSIGHT AI</title>
-    <link rel='stylesheet' href="{{ url_for('static', filename='index.css') }}">
-     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <!-- <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}"> -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+
+    .page-container {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    .form-group {
+      margin: 20px 0;
+    }
+
+    input {
+      width: 300px;
+      padding: 10px;
+      margin-bottom: 15px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    .button-group {
+      margin-top: 20px;
+    }
+
+    .btn {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      font-size: 18px;
+      cursor: pointer;
+      margin: 5px;
+    }
+
+    .btn-primary {
+      background-color: navy;
+      color: white;
+    }
+
+    .btn-secondary {
+      background-color: gray;
+      color: white;
+    }
+
+    .video-container {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -2;
+      overflow: hidden;
+    }
+
+    video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .video-overlay {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.4);
+      z-index: -1;
+    }
+
+    .footer {
+      margin-top: 40px;
+      font-size: 16px;
+      color: white;
+    }
+
+    h1, h2 {
+      text-align: center;
+    }
+
+    a {
+      position: absolute;
+      top: 10px;
+      left: 20px;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      background: rgba(0, 0, 0, 0.4);
+      padding: 8px 12px;
+      border-radius: 6px;
+    }
+  </style>
 </head>
 
-  <body>
-    <a href='/'>HOME</a>
-    <!-- Background Video -->
+<body>
+  <a href="/">HOME</a>
+
+  <!-- Background Video -->
   <div class="video-container">
     <video 
       id="backgroundVideo" 
       autoplay 
       muted 
       loop 
-      playsinline
+      playsinline 
       preload="metadata"
-      aria-label="Background animation"
-      
-    >
+      aria-label="Background animation">
+      <source src="{{ url_for('static', filename='background.mp4') }}" type="video/mp4">
+      Your browser does not support the video tag.
     </video>
   </div>
-  
-  <!-- Video overlay for better text readability -->
+
   <div class="video-overlay"></div>
-   
-   <div class='page-container' style='flex:1;'>
-    <h1 style="color:grey; font-weight: bold;text-shadow: 2px 2px 0 #000, 2px 2px 0 #555;">Forecast Your Crypto Future</h1>
-     
-        <div class='form-group'>
-       <form action='/predict' method='post'>
-         
-         <label style='font-size:26px;color:navy;text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);'>Opening Price:</label>
-         <input type='text' name='open' placeholder='Enter opening price' style='margin-bottom:15px;padding:8px;'><br>
-         
-         <label style='font-size:26px;color:navy;text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);'>Highest Price:</label>
-         <input type='text' name='high' placeholder='Enter highest price' style='margin-bottom:15px;padding:8px;'><br>
-         
-         <label style='font-size:26px;color:navy;text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);'>Lowest Price:</label>
-         <input type='text' name='low' placeholder='Enter lowest price' style='margin-bottom:15px;padding:8px;'><br>
-         
-         <label style='font-size:26px;color:navy;text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);'>Closing Price:</label>
-         <input type='text' name='close' placeholder='Enter closing price' style='margin-bottom:15px;padding:8px;'><br>
-         
-         <label style='font-size:26px; color:navy ;text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);'>Volume:</label>
-         <input type='text' name='volume' placeholder='Enter volume' style='margin-bottom:15px;padding:8px;'><br>
-           </div>
-         
-         <div class="button-group">
-            <button type="submit" class="btn btn-primary" id="submitBtn">
-              <span>🔍</span> Predict 
-            </button><br><br>
-            <button type="button" class="btn btn-secondary" >
-    <span>🔄</span> Reset Form
-  </button>
-          <div class="footer">
-                <p><i class="fas fa-heart" style="color: #ef4444;"></i> Made with love by Gursimranjot Kaur</p>
-            </div>
-</div>
-          </div>
-       </form>
-      
-  
-    {% if result%}
-     <h2 style="color:rebeccapurple; font-weight: bold;text-shadow: 1px 1px 0 #000, 2px 2px 0 #555;">Nearest Predicted closing price for tomorrow : {{result}} </h2>
-    {% endif%}
-    
-   </div>
-    
-  </body>
+
+  <!-- Page Content -->
+  <div class="page-container">
+    <h1 style="color:grey; font-weight: bold;text-shadow: 2px 2px 0 #000, 2px 2px 0 #555;">
+      Forecast Your Crypto Future
+    </h1>
+
+    <form action="/predict" method="post" id="predictionForm">
+      <div class="form-group">
+        <label style="font-size:26px;color:navy;text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);">Opening Price:</label><br>
+        <input type="text" name="open" placeholder="Enter opening price"><br>
+
+        <label style="font-size:26px;color:navy;">Highest Price:</label><br>
+        <input type="text" name="high" placeholder="Enter highest price"><br>
+
+        <label style="font-size:26px;color:navy;">Lowest Price:</label><br>
+        <input type="text" name="low" placeholder="Enter lowest price"><br>
+
+        <label style="font-size:26px;color:navy;">Closing Price:</label><br>
+        <input type="text" name="close" placeholder="Enter closing price"><br>
+
+        <label style="font-size:26px;color:navy;">Volume:</label><br>
+        <input type="text" name="volume" placeholder="Enter volume"><br>
+      </div>
+
+      <div class="button-group">
+        <button type="submit" class="btn btn-primary">
+          <span>🔍</span> Predict
+        </button>
+        <button type="button" class="btn btn-secondary" onclick="document.getElementById('predictionForm').reset();">
+          <span>🔄</span> Reset Form
+        </button>
+      </div>
+
+      {% if result %}
+        <h2 style="color:rebeccapurple; font-weight: bold; text-shadow: 1px 1px 0 #000, 2px 2px 0 #555;">
+          Nearest Predicted Closing Price for Tomorrow: {{ result }}
+        </h2>
+      {% endif %}
+    </form>
+
+    <div class="footer">
+      <p><i class="fas fa-heart" style="color: #ef4444;"></i> Made with love by Gursimranjot Kaur</p>
+    </div>
+  </div>
+</body>
 </html>
