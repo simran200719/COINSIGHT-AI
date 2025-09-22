@@ -27,11 +27,6 @@ def home():
     return render_template('home.html', btc_price=btc_price)
 
 
-
-@app.route('/home')
-def start():
-    return redirect(url_for('home'))  # Redirect to the 'home' function
-    
 @app.route('/start')
 def startt():
     return render_template('index.html')
