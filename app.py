@@ -29,7 +29,10 @@ def home():
 @app.route('/about')
 def about():
     return render_template('about.html')
-
+    
+@app.route('/canva')
+def canva():
+    return render.template('canva.html')
 
 @app.route('/start')
 def startt():
